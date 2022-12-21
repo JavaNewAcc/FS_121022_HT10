@@ -10,7 +10,6 @@ $input-border-color: #3D3D3C;
 $color_lightGrey: #F2F2F2;
 $color_GrigioChiaro:#B5B7C3;
 
-
 @mixin make-container($paddingE, $paddingS, $marginE: auto, $marginS: auto) {
     width: 100%;
     padding-right: $paddingE;
@@ -33,11 +32,17 @@ p{
 }
 
 .navbar_container {
-    @include make-container(2.1rem, 5.3rem)
+    @include make-container(2.1rem, 5.3rem);
+    @media (max-width:767px){
+        @include make-container(1rem, 1rem);
+    }
 }
 
 .main_body_container {
     @include make-container(5.6rem, 5.6rem);
+    @media (max-width:767px){
+        @include make-container(1rem, 1rem, $marginE: auto, $marginS: auto);
+    }
 }
 
 .navbar {
@@ -115,7 +120,7 @@ form .btn {
 }
 
 .bg_main_page {
-    background-image: linear-gradient(270deg, #3D3D3C 0%, rgba(61, 61, 60, 0.2) 100%), url(../IMG/bgMain.png);
+    background-image: linear-gradient(270deg, #3D3D3C 0%, rgba(61, 61, 60, 0.2) 100%), url(../img/bgMain.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -290,7 +295,7 @@ h3 {
 }
 
 .news_bg {
-    background-image: url(../IMG/SecondaryBg.png);
+    background-image: url(../img/scndryBg.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top center;
